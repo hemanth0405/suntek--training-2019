@@ -1,0 +1,56 @@
+//
+//  main.c
+//  5
+//
+//  Created by hemanth.
+//  Copyright © 2019 hemanth. All rights reserved.
+//
+
+#include <stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node* next;
+    
+};
+void nth(struct node *head,int n)
+   {
+       int l=0,i;
+   struct node* temp=head;
+   while(temp!=NULL)
+   {
+       temp=temp->next;
+       l++;
+   }
+   temp=head;
+   for(i=0;i<l-n+1;i++)
+   {
+       temp=temp->next;
+   }
+   printf("%d",temp->data);
+   }
+void insert(struct node * temp)
+{
+    struct node* newnode=(struct node*)malloc(sizeof(struct node*));
+    scanf("%d",&newnode->data);
+    temp->next=newnode;
+    newnode->next=NULL;
+    printf("do you want to continue");
+    scanf("%d",&ch);
+    while(ch==1)
+    insert(newnode);
+}
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    int ch,n;
+    struct node *head=NULL;
+    struct node * newnode=(struct node * )malloc(sizeof(struct node *));
+    scanf("%d",&newnode->data);
+    newnode->next=NULL;
+    insert(newnode);
+    printf("enter node number");
+    scanf("%d",&n);
+    nth(head,n);
+    return 0;
+}
