@@ -1,0 +1,41 @@
+//
+//  main.c
+//  19-sept
+//
+//  Created by hemanth on 22/09/19.
+//  Copyright © 2019 hemanth. All rights reserved.
+//
+
+#include <stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    char str1[50],str2[50];
+    int count1[26]={0},count2[26]={0},i=0,j=0,k=0,flag=0;
+    gets(str1);
+    gets(str2);
+    if(strlen(str1)!=strlen(str2))
+    {   printf("not anagram");
+        return 1;
+    }
+    while(str1[i]!='\0')
+        {
+            j=str1[i]-97;
+            k=str2[i]-97;
+            count1[j]++;
+            count2[k]++;
+            i++;
+        }
+    for(i=0;i<26;i++)
+    {
+        if(count1[i]==count2[i])
+            flag=1;
+        else flag=0;
+        
+    }
+    if(flag==1)
+        printf("anagram");
+    else printf("not  anagram");
+    return 0;
+}
