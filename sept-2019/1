@@ -1,0 +1,28 @@
+//
+//  main.c
+//  18-sept
+//
+//  Created by hemanth on 22/09/19.
+//  Copyright © 2019 hemanth. All rights reserved.
+//
+
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+     char a[50];
+       int count[26]={0},i=0,j=0;
+       gets(a);
+       
+       while(a[i]!='\0')
+       {
+           j=a[i]-97;
+           count[j]++;
+           i++;
+       }
+       for(i=0;i<26;i++)
+       {
+           printf("%c %d\n",i+97,count[i]);
+       }
+       return 0;
+}
